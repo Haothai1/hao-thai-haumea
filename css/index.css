@@ -1,0 +1,79 @@
+body {
+  background-color: #769fdc;
+  color: #333333;
+  font-family: 'Reddit Mono', monospace;
+  margin: 0;
+  padding: 0;
+  border: 2px solid #000000; /* Black border */
+}
+
+section {
+  margin: 20px 0;
+  padding: 10px;
+  border: 2px solid #FF0000; /* Red border */
+}
+
+.section-content {
+  text-align: center;
+  border: 2px solid #00FF00; /* Green border */
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  color: #1a202c;
+  border: 2px solid #0000FF; /* Blue border */
+}
+
+h4 {
+  border: 2px solid #146394;
+}
+h1 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: #4a5568;
+}
+
+p{ 
+  border: 2px solid #49dc2c; /* light green */
+}
+nav ul, ul {
+  text-decoration: none;
+  border: 2px solid #FFFF00; /* Yellow border */
+}
+
+#experience-item {
+  display: block;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border: 2px solid #FF00FF; /* Magenta border */
+}
+
+.social-icons{
+  display:flex;
+  list-style-type: none !important;
+}
+
+.social-icons li{
+  width:100%;
+}
+
+.connect-link {
+  /* color: #2b6cb0; */
+  color:#000000;
+  text-decoration: none;
+  list-style-type: none !important;
+}
+
+.connect-link:hover {
+  transform: scale(1.05);
+}
+
+
+
+img[alt] {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #800080; /* Purple border */
+}
