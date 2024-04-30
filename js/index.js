@@ -29,3 +29,78 @@ skills.forEach(skill => {
     skillItem.innerText = skill;
     skillsList.appendChild(skillItem);
 });
+
+// Message form
+
+const messageForm = document.forms['leave_message'];
+
+messageForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const usersName = event.target.usersName.value;
+    const usersEmail = event.target.usersEmail.value;
+    const usersMessage = event.target.usersMessage.value;
+
+    addMessage(usersName, usersEmail, usersMessage);
+    messageForm.reset();
+    updateMessageVisibility();
+});
+
+// Hide #messages section, when the list is empty
+function updateMessageVisibility() {
+    const messageSection = document.getElementById('messages');
+    const messageList = messageSection.querySelector('ul');
+    // Check if there are any item in the list
+    if (messageList.children.length === 0) {
+        messageSection.style.display = 'none';
+    } else {
+        messageSection.style.display = 'block';
+    }
+}
+
+// Call this function on page load and after any modification to the list
+document.addEventListener('DOMContentLoaded', function () {
+    updateMessageVisibility(); // Ensure visibility is checked on page load
+});
+
+function addMessage(name, email, message) {
+    const messageList = document.getElementById('messages').querySelector('ul');
+    const newMessage = document.createElement('li');
+    newMessage.innerHTML = `<a href="mailto:${email}">${name}</a><span>: ${message}</span>`;
+
+    // Create edit button
+    const editButton = document.createElement('button');
+    editButton.textContent = 'edit';
+    editButton.onclick = function () {
+        const textarea = document.createElement('textarea');
+        textarea.value = message;
+        newMessage.replaceChild(textarea, newMessage.querySelector('span'));
+
+        // Save button for the edited message
+        const saveButton = document.createElement('button');
+        saveButton.textContent = 'save';
+        saveButton.onclick = function () {
+            const span = document.createElement('span');
+            span.textContent = `: ${textarea.value}`;
+            newMessage.replaceChild(span, textarea);
+            newMessage.appendChild(editButton);
+            saveButton.remove();
+        };
+
+        newMessage.appendChild(saveButton);
+        editButton.remove();
+    };
+
+    // Remove button
+    const removeButton = document.createElement('button');
+    removeButton.textContent = 'remove';
+    removeButton.onclick = function () {
+        newMessage.remove();
+        updateMessageVisibility();
+    };
+
+    newMessage.appendChild(editButton);
+    newMessage.appendChild(removeButton);
+    messageList.appendChild(newMessage);
+    updateMessageVisibility();
+}
