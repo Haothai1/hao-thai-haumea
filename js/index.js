@@ -104,3 +104,34 @@ function addMessage(name, email, message) {
     messageList.appendChild(newMessage);
     updateMessageVisibility();
 }
+
+/* Fetch API */
+
+// Load DOM content
+document.addEventListener('DOMContentLoaded', function() {
+    const projectSection = document.getElementById('Projects');
+    const projectList = projectSection.querySelector('ul');
+
+    fetch('https://api.github.com/users/Haothai1/repos')
+        .then(response => {
+            if (!response.ok) { 
+                throw new Error('Network response was not ok: ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(repositories => {
+            // Filter repositories based name
+            return repositories.filter(repo => !repo.fork && repo.name !== "Haothai1" && repo.name !== "hao-thai-haumea");
+        })
+        .then(repositories => {
+            // Iterate over each repository and create a list item
+            repositories.forEach(repo => {
+                const project = document.createElement('li'); 
+                project.innerText = repo.name; 
+                projectList.appendChild(project); 
+            });
+        })
+        .catch(error => {
+            console.error('Failed to fetch data:', error);
+        });
+});
