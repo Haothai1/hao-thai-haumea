@@ -1,3 +1,4 @@
+/* js/index.html */
 // Make a Footer
 const footer = document.createElement('footer');
 
