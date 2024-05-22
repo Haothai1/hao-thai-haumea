@@ -324,15 +324,184 @@ textarea {
   height: 75px;
 }
 
-/* Responsive Design for Small Screens */
-@media (max-width: 600px) {
-  .job {
-    flex-direction: column;
-    align-items: start;
+/* 4k and up devices (2650px)*/
+@media (min-width: 2561px) {
+
+  h1,
+  h2,
+  h3 {
+    font-size: 3rem;
+    color: #2c3e50;
   }
 
-  .job-title,
-  .job-dates {
-    flex-basis: 100%;
+  nav ul {
+    padding: 20px 0;
+    background-color: #333333;
+  }
+
+  .section-content {
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+
+  .experience,
+  .connect {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+/* Large Laptops to 4k (1440px) */
+@media (min-width: 1441px) and (max-width: 2560px) {
+
+  h1,
+  h2,
+  h3 {
+    font-size: 2.8rem;
+    color: #2c3e50;
+  }
+
+  nav ul {
+    padding: 18px 0;
+  }
+
+  .section-content {
+    padding: 18px;
+    background-color: #e0e0e0;
+  }
+
+  .experience,
+  .connect {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Laptops (1024px)*/
+@media (min-width: 1025px) and (max-width: 1440px) {
+
+  h1,
+  h2,
+  h3 {
+    font-size: 2.2rem;
+    color: #39424e;
+  }
+
+  nav ul {
+    padding: 20px 0;
+
+  }
+
+  img[alt] {
+    border: 2px solid #ffb6fc;
+  }
+
+  .experience {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .connect {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .social-icons {
+    display: grid;
+    grid-column: span 6;
+  }
+}
+
+/* tablets to small laptops (768px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  h1,
+  h2,
+  h3 {
+    font-size: 2.3rem;
+    color: #2c3e50;
+  }
+
+  nav ul {
+    padding: 16px 0;
+  }
+
+  .section-content {
+    padding: 16px;
+    background-color: #d0d0d0;
+  }
+
+  .experience,
+  .connect {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Large mobile devices to tablet (425px)*/
+@media (min-width: 426px) and (max-width: 768px) {
+
+  h1,
+  h2,
+  h3 {
+    font-size: 2rem;
+    color: #2c3e50;
+  }
+
+  nav ul {
+    padding: 10px 0;
+    background-color: #666;
+  }
+
+  .section-content {
+    padding: 15px;
+    background-color: #d3d3d3;
+  }
+
+  .experience,
+  .connect {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Medium moblie devices (375px)*/
+@media (min-width: 376px) and (max-width: 425px) {
+
+  h1,
+  h2,
+  h3 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+  }
+
+  nav ul {
+    padding: 8px 0;
+  }
+
+  .section-content {
+    padding: 12px;
+    background-color: #c7c7c7;
+  }
+}
+
+/* Small mobile devices (320px) */
+@media (max-width: 375px) {
+
+  h1,
+  h2,
+  h3 {
+    font-size: 1.6rem;
+    color: #2c3e50;
+  }
+
+  nav ul {
+    padding: 6px 0;
+
+  }
+
+  .section-content {
+    padding: 10px;
+    background-color: #bcbcbc;
   }
 }
