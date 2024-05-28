@@ -1,7 +1,7 @@
 # Portfolio
 
 ## Description
-This project demonstrates how to load and display data from the Spotify API using HTML, CSS, and JavaScript. The app will require you to login to a spotify account then display the user profile information and the top five songs of the user.
+This project is a portfolio that displays my projects, experience, and skills.
 
 ## Setup
 If you do not already have Git install it:
